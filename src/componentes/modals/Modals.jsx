@@ -13,11 +13,13 @@ const Modals = ({
   secondaryAction,
   secondaryLabel,
 }) => {
+ 
   const [showModal, setshowModal] = useState(isOpen);
   useEffect(() => {
     setshowModal(isOpen);
   }, [isOpen]);
   const handleClose = useCallback(() => {
+    
     if (disabled) {
       return;
     }
