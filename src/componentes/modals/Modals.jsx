@@ -86,7 +86,7 @@ relative flex flex-col w-full otline-none focus:outline-none"
     <Button disabled={disabled}
 label={secondaryAction} onClick={handleClose}/>
 )}
-<Button disabled={disabled} icon={IoMdClose} 
+<Button disabled={disabled} 
 label={actionLabel} onClick={handleSubmit}/>
 </div>
          </div>
