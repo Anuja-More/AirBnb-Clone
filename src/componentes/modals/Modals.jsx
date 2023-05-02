@@ -57,7 +57,6 @@ const Modals = ({
         lg:h-auto
         md:h-auto"
       >
-        {/* //content */}
         <div
           className={`translate duration-300 h-full 
 ${showModal ? "translate-y-0" : "translate-y-full"}
