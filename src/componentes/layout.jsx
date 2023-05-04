@@ -1,11 +1,12 @@
+import ToasterProvider from '@/providers/toasterProvider'
 import React from 'react'
-import Modals from './modals/modals'
+import RegisterModal from './modals/RegisterModal'
 import Navbar from './Navbar/Navbar'
 export const Layout = ({children}) => {
   return (
    <>
-   
- {/* <Modals actionLabel="Submit" title="Login" isOpen="false"/> */}
+   <ToasterProvider/>
+   <RegisterModal/>
    <Navbar/>
    <main>{children}</main>
    </>
