@@ -9,7 +9,9 @@ import Heading from '../Heading';
 import Input from '../Input';
 import { toast } from 'react-hot-toast';
 import CustomButton from '../Button';
-
+import { signIn } from 'next-auth/react';
+import Github from 'next-auth/providers/github';
+import Google from 'next-auth/providers/google';
 const RegisterModal = () => {
   const registerModal = useRegisterModalStore();
   const [isLoading, setIsLoading] = useState(false);
@@ -74,9 +76,9 @@ const bodyContent = (
     <div className='flex flex-col gap-3 mt-3'>
 <hr/>
 <CustomButton outline label="Continue with Google" icon={FcGoogle} 
-onClick={()=>{}}/>
+onClick={()=>signIn(Google)}/>
 <CustomButton outline label="Continue with Github" icon={AiFillGithub} 
-onClick={()=>{}}/>
+onClick={()=>signIn('github')}/>
 <div className='text-neutral-500 text-center mt-4 font-light'>
     <div className='justfiy-center flex flex-row items items-center gap-2'>
         <div>Already have an account ?</div>

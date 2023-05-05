@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Avatar } from "./Avatar";
 import { useState, useCallback } from "react";
+import { signOut } from "next-auth/react";
 import MenuItem from "./MenuItem";
 import useLoginModalStore from "../../hooks/useLoginModalStore";
 import useRegisterModalStore from "@/hooks/useRegisterModal";
@@ -47,6 +48,33 @@ const UserMenu = () => {
         text-sm">
 <div className="flex flex-col cursor-pointer">
 <>
+<>
+                <MenuItem 
+                  label="My trips" 
+                  onClick={() => router.push('/trips')}
+                />
+                <MenuItem 
+                  label="My favorites" 
+                  onClick={() => router.push('/favorites')}
+                />
+                <MenuItem 
+                  label="My reservations" 
+                  onClick={() => router.push('/reservations')}
+                />
+                <MenuItem 
+                  label="My properties" 
+                  onClick={() => router.push('/properties')}
+                />
+                <MenuItem 
+                  label="Airbnb your home" 
+                  // onClick={rentModal.onOpen}
+                />
+                <hr />
+                <MenuItem 
+                  label="Logout" 
+                  onClick={() => signOut()}
+                />
+              </>
 <MenuItem onClick={LoginModal.onOpen} label="Login"/>
 <MenuItem onClick={registerModal.onOpen} label="Sign Up"/>
 </>
