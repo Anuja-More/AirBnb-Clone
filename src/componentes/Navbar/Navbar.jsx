@@ -4,6 +4,7 @@ import Container from '../Container'
 import Logo from './Logo'
 import Search from './search'
 import UserMenu from './UserMenu'
+import Categories from './Categories'
 
 const Navbar = props => {
   return (
@@ -19,6 +20,9 @@ const Navbar = props => {
               <UserMenu/>
             </div>
           </Container>
+          <div>
+            <Categories/>
+          </div>
         </div>
     </div>
   )

@@ -8,7 +8,8 @@ const Logo = props => {
   return (
     <Image alt='Logo' className='hidden
      md:block cursor-pointer
-    ' 
+    '
+    onClick={()=>router.push('/')} 
     height= '100'
     width='100'
     src="/images/logo.png"
