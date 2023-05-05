@@ -6,4 +6,5 @@ const useLoginModalStore = create((set) => ({
   onClose: () => set({ isOpen: false })
 }));
 
+
 export default useLoginModalStore;
