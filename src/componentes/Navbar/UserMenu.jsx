@@ -2,9 +2,8 @@ import React, { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Avatar } from "./Avatar";
 import { useState, useCallback } from "react";
-import { signOut } from "next-auth/react";
 import MenuItem from "./MenuItem";
-import useLoginModalStore from "../../hooks/useLoginModalStore";
+import useLoginModalStore from "@/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/hooks/useRegisterModal";
 const UserMenu = () => {
   const LoginModal = useLoginModalStore()
@@ -70,13 +69,9 @@ const UserMenu = () => {
                   // onClick={rentModal.onOpen}
                 />
                 <hr />
-                <MenuItem 
-                  label="Logout" 
-                  onClick={() => signOut()}
-                />
-              </>
-<MenuItem onClick={LoginModal.onOpen} label="Login"/>
+                <MenuItem onClick={LoginModal.onOpen} label="Login"/>
 <MenuItem onClick={registerModal.onOpen} label="Sign Up"/>
+              </>
 </>
 </div>
         </div>
