@@ -5,18 +5,23 @@ import { useState, useCallback } from "react";
 import MenuItem from "./MenuItem";
 import useLoginModalStore from "@/hooks/useLoginModalStore";
 import useRegisterModalStore from "@/hooks/useRegisterModal";
+import useRentModal from "@/hooks/useRentModal";
 const UserMenu = () => {
   const LoginModal = useLoginModalStore()
   const registerModal =  useRegisterModalStore()
+  const rentModal =  useRentModal()
     const[isOpen, setOpen] = useState(false)
     const toggleOpen = useCallback(()=>{
         setOpen((value) => !value)
     },[])
+    const onRent = useCallback(() => {
+            rentModal.onOpen();
+    }, [rentModal]);
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
-          onClick={() => {}}
+          onClick={onRent}
           className="hidden md:block text-sm font-semibold py-3 px-4 round-full hover:bg-neutral-100
             transition cursor-pointer"
         >
@@ -66,7 +71,7 @@ const UserMenu = () => {
                 />
                 <MenuItem 
                   label="Airbnb your home" 
-                  // onClick={rentModal.onOpen}
+                  onClick={rentModal.onOpen}
                 />
                 <hr />
                 <MenuItem onClick={LoginModal.onOpen} label="Login"/>

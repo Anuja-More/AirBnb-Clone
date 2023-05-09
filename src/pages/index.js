@@ -1,11 +1,142 @@
-import Head from 'next/head'
-// import Image from 'next/image'
-// import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
-
-// const inter = Inter({ subsets: ['latin'] })
-
+import Head from "next/head";
+import Container from "@/componentes/Container";
+import ListingCard from "@/componentes/listingCard";
+const currentUser = "6459f03985450376d4063c71"
+const listings = [
+  {
+    id:"6459f03985450376d4063c71" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/864482100/photo/luxury-holiday-island-villa-home-exterior-with-infinity-pool.jpg?s=612x612&w=0&k=20&c=YnV1WWhsXFWsK_0kbwWgrqWBdzJAO2I0vBPHPLav5UY=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  },
+  {
+    id:"6459f03985450376d4063c72" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  }, {
+    id:"6459f03985450376d4063c73" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/903417402/photo/luxury-construction-hotel-with-swimming-pool-at-sunset.jpg?s=612x612&w=0&k=20&c=NyPC_c-wE3W_CImA4t57FpyGy6f428CYROd80jxVC4A=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  },
+  {
+    id:"6459f03985450376d4063c74" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/119926339/photo/resort-swimming-pool.jpg?s=612x612&w=0&k=20&c=9QtwJC2boq3GFHaeDsKytF4-CavYKQuy1jBD2IRfYKc=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  }, {
+    id:"6459f03985450376d4063c75" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/503019528/photo/road-front-of-luxury-building-in-clear-sky-at-night.jpg?s=612x612&w=0&k=20&c=xkjUByXNE5SdMSeYxLqIwweZMg9XZ6xnWEK7ypdeO4I=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  }, {
+    id:"6459f03985450376d4063c76" ,
+    category: "Beach",
+    location: {
+      value: "AI",
+      label: "Anguilla",
+      flag: "🇦🇮",
+      latlng: ["18.25", "-63.16666666"],
+      region: "Americas",
+    },
+    guestCount:  "1",
+    roomCount: "1",
+    bathroomCount:"1",
+    imageSrc:
+      "https://media.istockphoto.com/id/530578690/photo/island-villa.jpg?s=612x612&w=0&k=20&c=ZD7aw-Tp6HBYEjlE4UovAhY0n6XW72hcb2D69dC04uA=",
+    price: "1902",
+    title: "new home",
+    description: "feel like home",
+  },
+  {
+    category: "Pools",
+    location: {
+        value: "AX",
+        label: "Åland Islands",
+        flag: "🇦🇽",
+        latlng: [
+            60.116667,
+            19.9
+        ],
+        region: "Europe"
+    },
+    guestCount: 1,
+    roomCount: 4,
+    bathroomCount: 1,
+    imageSrc: "https://res.cloudinary.com/dflno6ta8/image/upload/v1683623819/yma7gy3ducffspan4e21.jpg",
+    price: "1098",
+    title: "768",
+    description: "987yuh"
+}
+];
 export default function Home() {
+  console.log(listings)
   return (
     <>
       <Head>
@@ -14,9 +145,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1 className='text-2xl font-bold underline'>AirBnb</h1>
-        </main>
+      <Container>
+        <div
+          className="
+            pt-24
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4
+            xl:grid-cols-5
+            2xl:grid-cols-6
+            gap-8
+          "
+        >
+        <>
+              {listings.length === 0 ? (
+                <p>No data</p>
+              ) : (
+                listings.map((listing) => (
+                  <ListingCard
+                    currentUser={currentUser}
+                    key={listing.id}
+                    data={...listing}
+                  />
+                ))
+              )}
+            </>
+        </div>
+      </Container>
     </>
-  )
+  );
 }
