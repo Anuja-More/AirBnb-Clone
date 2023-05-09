@@ -73,7 +73,7 @@ ${showModal ? "opacity-100" : "opacity-0"}
             h-full lg:h-auto
 md:h-auto
 border-0 rounded-lg
-shadow-lg
+shadow-lg bg-white
 relative flex flex-col w-full outline-none focus:outline-none"
           >
             {/* header */}
