@@ -2,6 +2,7 @@ import Head from "next/head";
 import Container from "@/componentes/Container";
 import ListingCard from "@/componentes/listingCard";
 const currentUser = "6459f03985450376d4063c71"
+
 const listings = [
   {
     id:"6459f03985450376d4063c71" ,
@@ -135,8 +136,8 @@ const listings = [
     description: "987yuh"
 }
 ];
+
 export default function Home() {
-  console.log(listings)
   return (
     <>
       <Head>
@@ -167,7 +168,7 @@ export default function Home() {
                   <ListingCard
                     currentUser={currentUser}
                     key={listing.id}
-                    data={...listing}
+                    data={listing}
                   />
                 ))
               )}

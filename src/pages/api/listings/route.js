@@ -3,7 +3,7 @@ import getCurrentUser from "@/actions/getCurrentUser";
 const prisma = require("../../../libs/prismadb");
 
 export async function POST(
-  request, response
+  request
 ) {
   const currentUser = await getCurrentUser();
 

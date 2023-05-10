@@ -6,13 +6,13 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
-import useLoginModal from "@/app/hooks/useLoginModal";
+import useLoginModalStore from "@/hooks/useLoginModalStore";
 
-import Container from "@/app/components/Container";
-import { categories } from "@/app/components/navbar/Categories";
-import ListingHead from "@/app/components/listings/ListingHead";
-import ListingInfo from "@/app/components/listings/ListingInfo";
-import ListingReservation from "@/app/components/listings/ListingReservation";
+import Container from "../../componentes/Container";
+import { categories } from "../../componentes/Navbar/Categories";
+import ListingHead from "@/componentes/listings/ListingHead";
+// import ListingInfo from "@/app/components/listings/ListingInfo";
+// import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -23,26 +23,26 @@ const initialDateRange = {
 
 const ListingClient = ({
   listing,
-  reservations = [],
+  // reservations = [],
   currentUser
 }) => {
-  const loginModal = useLoginModal();
+  const loginModal = useLoginModalStore();
   const router = useRouter();
 
-  const disabledDates = useMemo(() => {
-    let dates = [];
+  // const disabledDates = useMemo(() => {
+  //   let dates = [];
 
-    reservations.forEach((reservation) => {
-      const range = eachDayOfInterval({
-        start: new Date(reservation.startDate),
-        end: new Date(reservation.endDate)
-      });
+  //   reservations.forEach((reservation) => {
+  //     const range = eachDayOfInterval({
+  //       start: new Date(reservation.startDate),
+  //       end: new Date(reservation.endDate)
+  //     });
 
-      dates = [...dates, ...range];
-    });
+  //     dates = [...dates, ...range];
+  //   });
 
-    return dates;
-  }, [reservations]);
+  //   return dates;
+  // }, [reservations]);
 
   const category = useMemo(() => {
      return categories.find((items) => 
@@ -126,7 +126,7 @@ const ListingClient = ({
               mt-6
             "
           >
-            <ListingInfo
+            {/* <ListingInfo
               user={listing.user}
               category={category}
               description={listing.description}
@@ -134,8 +134,8 @@ const ListingClient = ({
               guestCount={listing.guestCount}
               bathroomCount={listing.bathroomCount}
               locationValue={listing.locationValue}
-            />
-            <div 
+            /> */}
+            {/* <div 
               className="
                 order-first 
                 mb-10 
@@ -152,7 +152,7 @@ const ListingClient = ({
                 disabled={isLoading}
                 disabledDates={disabledDates}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
